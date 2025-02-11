@@ -316,8 +316,36 @@ college_recent_grads %>%
 
 9.  Create a scatterplot of median income vs. proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables.
 
+There are more non-setm majors but the few women in stem majors make more money
+
+```{r}
+ggplot(college_recent_grads, aes(x = women, y = median, color = major_type)) + 
+  geom_point(alpha = 0.7) + 
+  labs(
+    title = "Median Income vs. Proportion of Women in Major",
+    x = "Proportion of Women in Major",
+    y = "Median Income",
+    color = "Major Category"
+  ) 
+```
+
+
 ## Further exploration
 
 10. Ask a question of interest to you, and answer it using summary statistic(s) and/or visualization(s).
+
+What are the proportion of men vs women in stem/non-stem majors?
+
+```{r}
+ggplot(college_recent_grads, aes(x = women, y = men, color = major_type)) + 
+  geom_point(alpha = 0.7) + 
+  labs(
+    title = "Proprtion of Men vs. Proportion of Women in Major",
+    x = "Proportion of Women in Major",
+    y = "Proportion of Men in Major",
+    color = "Major Category"
+  ) 
+```
+
 
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and review the md document on GitHub to make sure you're happy with the final state of your work.*
